@@ -1,0 +1,6 @@
+{
+  "name": "Bendary Pharmacy",
+  "description": "A premium pharmacy e-commerce platform since 1980, featuring e-prescriptions, insurance integration, and multi-channel support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

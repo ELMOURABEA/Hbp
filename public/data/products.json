@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Panadol Advance",
+    "price": 50,
+    "category": "Medicines",
+    "company": "GSK",
+    "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
+    "description": "Effective pain relief and fever reduction."
+  },
+  {
+    "id": 2,
+    "name": "Vitamin C 1000mg",
+    "price": 120,
+    "category": "Vitamins",
+    "company": "PharmaCo",
+    "image": "https://images.unsplash.com/photo-1550573105-0586793f1395?q=80&w=800&auto=format&fit=crop",
+    "description": "Supports immune system health."
+  },
+  {
+    "id": 3,
+    "name": "QV Intensive Cream",
+    "price": 250,
+    "category": "Skincare",
+    "company": "QV",
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop",
+    "description": "Deeply hydrating cream for very dry skin."
+  }
+]
