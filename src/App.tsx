@@ -8,6 +8,9 @@ import Prescription from "./pages/Prescription";
 import Account from "./pages/Account";
 import Branches from "./pages/Branches";
 import StaticPage, { AboutContent, PrivacyContent, TermsContent } from "./pages/StaticPages";
+import AIAssistant from "./components/AIAssistant";
+import ContactSpeedDial from "./components/ContactSpeedDial";
+import { SettingsProvider } from "./contexts/SettingsContext";
 import { AnimatePresence, motion } from "motion/react";
 
 function ScrollToTop() {
@@ -38,27 +41,31 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
 
 export default function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<PageLayout><Home /></PageLayout>} />
-          <Route path="/shop" element={<PageLayout><Shop /></PageLayout>} />
-          <Route path="/prescription" element={<PageLayout><Prescription /></PageLayout>} />
-          <Route path="/insurance" element={<PageLayout><Account type="Insurance" /></PageLayout>} />
-          <Route path="/account" element={<PageLayout><Account /></PageLayout>} />
-          <Route path="/branches" element={<PageLayout><Branches /></PageLayout>} />
-          <Route path="/about" element={<PageLayout><StaticPage title="About Us" content={AboutContent} /></PageLayout>} />
-          <Route path="/privacy" element={<PageLayout><StaticPage title="Privacy Policy" content={PrivacyContent} /></PageLayout>} />
-          <Route path="/terms" element={<PageLayout><StaticPage title="Terms & Conditions" content={TermsContent} /></PageLayout>} />
-          <Route path="/cart" element={<PageLayout><div className="max-w-7xl mx-auto px-4 py-24 text-center">
-            <h1 className="text-4xl font-bold mb-4 font-serif text-slate-900">Your Cart</h1>
-            <p className="text-slate-500 mb-8">Your cart is currently empty.</p>
-          </div></PageLayout>} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <SettingsProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen dark:bg-slate-950 transition-colors duration-300">
+          <ScrollToTop />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<PageLayout><Home /></PageLayout>} />
+            <Route path="/shop" element={<PageLayout><Shop /></PageLayout>} />
+            <Route path="/prescription" element={<PageLayout><Prescription /></PageLayout>} />
+            <Route path="/insurance" element={<PageLayout><Account type="Insurance" /></PageLayout>} />
+            <Route path="/account" element={<PageLayout><Account /></PageLayout>} />
+            <Route path="/branches" element={<PageLayout><Branches /></PageLayout>} />
+            <Route path="/about" element={<PageLayout><StaticPage title="About Us" content={AboutContent} /></PageLayout>} />
+            <Route path="/privacy" element={<PageLayout><StaticPage title="Privacy Policy" content={PrivacyContent} /></PageLayout>} />
+            <Route path="/terms" element={<PageLayout><StaticPage title="Terms & Conditions" content={TermsContent} /></PageLayout>} />
+            <Route path="/cart" element={<PageLayout><div className="max-w-7xl mx-auto px-4 py-24 text-center">
+              <h1 className="text-4xl font-bold mb-4 font-serif text-slate-900 dark:text-white">Your Cart</h1>
+              <p className="text-slate-500 dark:text-slate-400 mb-8">Your cart is currently empty.</p>
+            </div></PageLayout>} />
+          </Routes>
+          <Footer />
+          <AIAssistant />
+          <ContactSpeedDial />
+        </div>
+      </Router>
+    </SettingsProvider>
   );
 }

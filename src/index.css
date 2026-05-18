@@ -9,8 +9,10 @@
   --color-brand-red-dark: #b11f16;
 }
 
+@custom-variant dark (&:is(.dark *));
+
 body {
-  @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  @apply bg-slate-50 text-slate-900 font-sans antialiased dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300;
 }
 
 .medical-gradient {
